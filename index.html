@@ -1,0 +1,80 @@
+<html>
+<body>
+  <div id="map" style="width:100%;height:500px"></div>
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+      var distancia = [];
+      function CalculaDistancia(destino) {
+        //Instanciar o DistanceMatrixService
+        var service = new google.maps.DistanceMatrixService();
+        //executar o DistanceMatrixService
+        service.getDistanceMatrix({
+              //Origem
+              origins: ['-23.2201117,-45.9092771'],
+              //Destino
+              destinations: destino,
+              //Modo (DRIVING | WALKING | BICYCLING)
+              travelMode: google.maps.TravelMode.DRIVING,
+              //Sistema de medida (METRIC | IMPERIAL)
+              unitSystem: google.maps.UnitSystem.METRIC
+              //Vai chamar o callback
+          }, callback);
+      }
+      //Tratar o retorno do DistanceMatrixService
+      function callback(response, status) {
+        distancia.push(response.rows[0].elements[0].distance.value)
+        localStorage.setItem('distancia', distancia);
+      }
+      function myMap() {
+        var myCenter = new google.maps.LatLng(-23.1894443,-46.0030986);// centro do mapa
+        var myCenter2 = new google.maps.LatLng(-23.22316141,-45.90677977);
+        var mapCanvas = document.getElementById("map");//área do mapa
+        var mapOptions = {center: myCenter, zoom: 15};// configuração do mapa
+        var map = new google.maps.Map(mapCanvas, mapOptions); // aplica configuração
+        // chama  php para obter coordenadas no padrão json
+        $.ajax({
+          url: 'getCoords.php',//  a ser chamado
+          type: 'POST',// Método de envio
+          dataType: 'json'// Tipo de retorno
+        })
+        // get realizado (sucesso)
+        .done(function(data) // contem o que tem dentro do json
+        {
+          var pos;
+          var marker;
+          var marker2;
+          var infowindow;
+          var infowindow2
+          // percorre json data
+          for(var i in data){
+            pos = new google.maps.LatLng(data[i].x,data[i].y);// latitude em x, longitude em y
+            CalculaDistancia([`${data[i].x} , ${data[i].y}`])
+            situacao = localStorage.getItem(`distancia`).split(',')[i];
+            console.log(situacao)
+            aluno = data[i].aluno;
+
+            icone = situacao < 2000 ? 'selecionado.png' : 'n-selecionado.png';
+
+            marker = new google.maps.Marker({position:pos,icon:icone});// cria marcador
+            marker.setMap(map);// adiciona marcador ao mapa
+            
+            var infowindow = new google.maps.InfoWindow({ //marcador associado a mensagem (marcador com a janela)
+              content:`${data[i].aluno}`});	
+              infowindow.open(map,marker);//associa janela ao marcador						
+            };
+            
+          });
+
+          pos = new google.maps.LatLng('-23.2201117','-45.9092771');
+          marker = new google.maps.Marker({position:pos});
+          marker.setMap(map);
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF_pe4i4A9UlOu8u3u99GoJLDzhihpyZU&callback&callback&callback&callback=myMap"></script>
+    </head>
+  </body>
+  </html>

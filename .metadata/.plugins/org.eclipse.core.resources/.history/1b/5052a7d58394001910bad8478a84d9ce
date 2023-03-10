@@ -1,0 +1,44 @@
+package com.example.sqllitetentativa;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
+import android.view.Menu;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	String NomeBanco = "Escola";
+	SQLiteDatabase BancoDados = null;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+    
+    public void CriarBanco(){
+    	try
+    	{
+    		BancoDados = openOrCreateDatabase(NomeBanco, MODE_WORLD_READABLE, null);
+    		
+    		String sQuery = "CREATE TABLE IF NOT EXISTS aluno (" +
+    				"_id integer PRIMARY KEY,"+
+    				"nome TEXT,"+
+    				"idade TEXT)";
+    	}
+    	catch(Exception erro)
+    	{
+    		Toast.makeText(getApplicationContext(), "Erro ao criar banco", 2000).show();
+    	}
+    	finally{
+    		BancoDados.close();
+    	}
+    }
+}

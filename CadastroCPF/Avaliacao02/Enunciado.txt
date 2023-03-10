@@ -1,0 +1,19 @@
+
+Matricula - EditText
+Nome - EditText
+Departamento - EditText
+Salário - EditText
+Faltas - EditText
+Horas Extras - EditText
+Convenio Médico - EditText
+RG - EditText
+CPF - EditText
+[Cadastrar] - Button
+
+Critério:
+Resolução de problemas
+Implementar cadastro(Integrar JAVA(Mobile), PHP, 	MySql)
+Calcular salario a receber(descontar faltas e conv.médico, acrescentar horas extras)
+30 dias
+8 / dias
+Falta e Horas Extras em horas

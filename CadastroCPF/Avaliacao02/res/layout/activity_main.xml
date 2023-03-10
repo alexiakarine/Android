@@ -1,0 +1,277 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >     
+         
+	    <TableLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        >
+	
+	        <TableRow
+	            android:id="@+id/tableRow1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent" >
+	
+	            <TextView
+	                android:id="@+id/textView1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="MATRICULA:" />
+				<FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText1"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+		                android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="number"
+		                android:maxEms="14" />
+		            	<requestFocus />
+				</FrameLayout>
+	        </TableRow>
+	
+	         <TableRow
+	            android:id="@+id/tableRow2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView2"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="NOME:"/>
+	
+	           <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText2"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="DEPARTAMENTO:" />
+	
+	           <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText3"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView4"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="SALÁRIO:"/>
+	
+	            <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText4"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="numberDecimal"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow5"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView5"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="FALTAS:" />
+	
+	            <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText5"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="number"
+		                android:maxEms="14" />
+				</FrameLayout>
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow6"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView6"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="HORAS EXTRAS:"/>
+	
+	           <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText6"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="number"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow7"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView7"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="CONVÊNIO MÉDICO:" />
+	
+	           <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText7"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow8"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView8"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="RG:"/>
+	
+	           <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText8"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="number"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	         <TableRow
+	            android:id="@+id/tableRow9"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/textView9"
+	                android:layout_width="wrap_content"
+	                android:layout_height="30dp"
+					android:textSize="16dp"
+	                android:text="CPF:" />
+	
+	            <FrameLayout
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content">
+	            
+		            <EditText
+		                android:id="@+id/editText9"
+		                android:layout_width="wrap_content"
+		                android:layout_height="30dp"
+						android:textSize="10dp"
+		                android:ems="14"
+		                android:inputType="number"
+		                android:maxEms="14" />
+				</FrameLayout>
+	
+	        </TableRow>
+	
+	         <TableRow
+	             android:id="@+id/tableRow10"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content" >
+	
+	             <Button
+	                 android:id="@+id/button1"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="36dp"
+	                 android:onClick="cadastro"
+	                 android:textSize="14dp"
+	                 android:text="CADASTRAR" />
+	
+	
+	         </TableRow>
+	
+	    </TableLayout>
+	    
+	</RelativeLayout>
+	
+</ScrollView>
